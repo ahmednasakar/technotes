@@ -8,6 +8,7 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import { PulseLoader } from "react-spinners";
 
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
 
@@ -88,7 +89,7 @@ const DashHeader = () => {
   const errClass = isError ? "errmsg" : "offscreen";
 
   const buttonContent = isLoading ? (
-    <p>Logging Out...</p>
+    <PulseLoader color={"#FFF"} />
   ) : (
     <>
       {newNoteButton}

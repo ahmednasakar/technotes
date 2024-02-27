@@ -1,8 +1,11 @@
 import NewNoteForm from "./NewNoteForm";
 import { useGetUsersQuery } from "../users/usersApiSlice";
 import { PulseLoader } from "react-spinners";
+import useTitle from "../../hooks/useTitle";
 
 const NewNote = () => {
+  useTitle("techNotes: New Note");
+
   // Destructure the 'users' from the result of the 'useGetUsersQuery' hook
   const { users } = useGetUsersQuery("usersList", {
     // Customize the data selection from the query result

@@ -1,7 +1,11 @@
 import { useGetUsersQuery } from "./usersApiSlice";
 import User from "./User";
+import useTitle from "../../hooks/useTitle";
+import { PulseLoader } from "react-spinners";
 
 const UsersList = () => {
+  useTitle("techNotes: Users List");
+
   // Fetch users data using the useGetUsersQuery hook
   const {
     data: users,
@@ -19,7 +23,7 @@ const UsersList = () => {
   let content;
 
   // Show loading message while data is being fetched
-  if (isLoading) content = <p>Loading...</p>;
+  if (isLoading) content = <PulseLoader color={"#FFF"} />;
 
   // Show error message if there is an error
   if (isError) {

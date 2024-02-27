@@ -19,7 +19,6 @@ const PersistLogin = () => {
     // Check if the effect has run, or if not in development mode (React 18 Strict Mode)
     if (effectRan.current === true || process.env.NODE_ENV !== "development") {
       const verifyRefreshToken = async () => {
-        console.log("verifying refresh token");
         try {
           // const response =
           await refresh();
@@ -67,8 +66,6 @@ const PersistLogin = () => {
     content = <Outlet />;
   } else if (token && isUninitialized) {
     // persist: yes, token: yes
-    console.log("token and uninit");
-    console.log(isUninitialized);
     content = <Outlet />;
   }
 

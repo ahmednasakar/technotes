@@ -26,14 +26,14 @@ const Welcome = () => {
       </p>
       {/* Conditional rendering of links for viewing and adding User Settings */}
       {(isManager || isAdmin) && (
-        <p>
-          <Link to="/dash/users">View User Settings</Link>
-        </p>
-      )}
-      {(isManager || isAdmin) && (
-        <p>
-          <Link to="/dash/users/new">Add New User</Link>
-        </p>
+        <>
+          <p>
+            <Link to="/dash/users">View User Settings</Link>
+          </p>
+          <p>
+            <Link to="/dash/users/new">Add New User</Link>
+          </p>
+        </>
       )}
     </section>
   );

@@ -4,8 +4,11 @@ import { useGetNotesQuery } from "./notesApiSlice";
 import { useGetUsersQuery } from "../users/usersApiSlice";
 import useAuth from "../../hooks/useAuth";
 import { PulseLoader } from "react-spinners";
+import useTitle from "../../hooks/useTitle";
 
 const EditNote = () => {
+  useTitle("techNotes: Edit Note");
+
   // Extracting 'id' from the URL params
   const { id } = useParams();
 

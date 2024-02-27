@@ -1,8 +1,12 @@
 import { useGetNotesQuery } from "./notesApiSlice";
 import Note from "./Note";
 import useAuth from "../../hooks/useAuth";
+import useTitle from "../../hooks/useTitle";
+import { PulseLoader } from "react-spinners";
 
 const NotesList = () => {
+  useTitle("techNotes: Notes List");
+
   const { username, isManager, isAdmin } = useAuth();
 
   // Query hook for fetching notes
@@ -22,7 +26,7 @@ const NotesList = () => {
 
   // Loading state
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <PulseLoader className={"#FFF"} />;
   }
 
   // Error state
