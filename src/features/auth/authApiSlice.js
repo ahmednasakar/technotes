@@ -22,7 +22,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
           // Uncomment the following lines if you need to access data from the query
-          /* const { data } = */ await queryFulfilled;
+          /* const { data } = */
+          await queryFulfilled;
           //console.log(data);
 
           // Dispatch the logout action
